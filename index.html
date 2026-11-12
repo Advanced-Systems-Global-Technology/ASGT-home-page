@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#6b3cff" />
+    <title>ASGT | Advanced Systems Global Technology Ltd</title>
+    <meta
+      name="description"
+      content="Advanced Systems Global Technology (ASGT). Innovating Today. Empowering Tomorrow. Intelligent digital products, software, AI and cybersecurity from Delta, Lagos, Nigeria and London, UK."
+    />
+
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+
+    <!-- =====================================================================
+       HEADER
+       ===================================================================== -->
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="#top" aria-label="ASGT home">
+          <img src="assets/images/logo.png" alt="" width="134" height="160" />
+          <span>ASGT<small>Advanced Systems Global Technology</small></span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main">
+          <a class="site-nav__link" href="#about">About</a>
+          <a class="site-nav__link" href="#services">Services</a>
+          <a class="site-nav__link" href="#work">Our work</a>
+          <a class="site-nav__link" href="#security">Security</a>
+          <a class="site-nav__link" href="#how">Process</a>
+          <a class="site-nav__link" href="#faq">FAQ</a>
+          <a class="btn btn--primary" href="#contact">Start a project</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- =====================================================================
+         HERO
+         ===================================================================== -->
+      <div class="hero">
+        <div class="container">
+          <h1>
+            <span class="reveal reveal--2">Engineering-grade software</span>
+            <span class="reveal reveal--3"
+              >built to <span class="highlight">carry real load.</span></span
+            >
+          </h1>
+
+          <p class="hero__lead reveal reveal--4">
+            ASGT designs, builds and secures software systems. We operate our
+            own products in production and undertake selected engagements for
+            organisations that require the same standard of engineering.
+          </p>
+
+          <div class="hero__actions reveal reveal--4">
+            <a class="btn btn--primary" href="#contact">Start a project</a>
+            <a class="btn btn--secondary" href="#work">View our work</a>
+          </div>
+
+          <!-- Interactive beam demo. Behaviour lives in js/main.js (initBeamDemo). -->
+          <div class="beam-demo reveal reveal--5">
+            <div class="beam-demo__header">
+              <strong
+                >The same mechanics that power our structural design
+                platform</strong
+              >
+              <span
+                >Simply supported beam, 10 m span, P = 100 kN. Drag the slider
+                to move the load.</span
+              >
+            </div>
+
+            <svg
+              viewBox="0 0 520 240"
+              role="img"
+              aria-label="Beam with a moving load and its bending moment diagram"
+            >
+              <!-- Beam -->
+              <line
+                class="beam-line"
+                x1="40"
+                y1="82"
+                x2="480"
+                y2="82"
+                stroke="#221c4d"
+                stroke-width="7"
+                stroke-linecap="round"
+              />
+
+              <!-- Supports: pin at A, roller at B -->
+              <g class="beam-supports">
+                <polygon points="40,88 26,112 54,112" fill="#6b3cff" />
+                <polygon points="480,88 466,112 494,112" fill="#6b3cff" />
+                <line
+                  x1="20"
+                  y1="114"
+                  x2="60"
+                  y2="114"
+                  stroke="#6b3cff"
+                  stroke-width="3"
+                />
+                <line
+                  x1="456"
+                  y1="122"
+                  x2="504"
+                  y2="122"
+                  stroke="#6b3cff"
+                  stroke-width="3"
+                />
+                <circle cx="466" cy="117" r="4" fill="#6b3cff" />
+                <circle cx="494" cy="117" r="4" fill="#6b3cff" />
+              </g>
+
+              <!-- Moving point load (positioned by JavaScript) -->
+              <g id="load-arrow">
+                <line
+                  x1="0"
+                  y1="26"
+                  x2="0"
+                  y2="68"
+                  stroke="#ffc83d"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                />
+                <polygon points="-10,62 10,62 0,80" fill="#ffc83d" />
+                <text
+                  y="16"
+                  text-anchor="middle"
+                  font-size="13"
+                  font-weight="700"
+                  fill="#3f1fb5"
+                >
+                  100 kN
+                </text>
+              </g>
+
+              <!-- Support labels -->
+              <text x="40" y="150" font-size="12" fill="#665f8f">A</text>
+              <text x="474" y="150" font-size="12" fill="#665f8f">B</text>
+
+              <!-- Bending moment diagram (points set by JavaScript) -->
+              <text
+                x="40"
+                y="172"
+                font-size="12"
+                font-weight="600"
+                fill="#665f8f"
+              >
+                Bending moment (kNm)
+              </text>
+              <line
+                x1="40"
+                y1="182"
+                x2="480"
+                y2="182"
+                stroke="#221c4d"
+                stroke-width="1.5"
+              />
+              <polygon
+                id="moment-diagram"
+                fill="#6b3cff30"
+                stroke="#6b3cff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                points=""
+              />
+            </svg>
+
+            <input
+              id="load-slider"
+              type="range"
+              min="0.5"
+              max="9.5"
+              step="0.02"
+              value="1"
+              aria-label="Load position in metres from support A"
+            />
+
+            <div class="beam-demo__readout">
+              <div>Load position<strong id="out-position"></strong></div>
+              <div>Reactions A / B<strong id="out-reactions"></strong></div>
+              <div>Maximum moment<strong id="out-moment"></strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+         ABOUT
+         ===================================================================== -->
+      <section id="about">
+        <div class="container">
+          <div class="section-heading">
+            <span class="pill">Corporate profile</span>
+            <h2>About Advanced Systems Global Technology (ASGT)</h2>
+            <p>
+              Innovation is at the heart of everything we do. At ASGT, we
+              believe technology should do more than solve today’s challenges;
+              it should create new possibilities for tomorrow. We are driven by
+              curiosity, creativity and a commitment to developing intelligent,
+              practical solutions that transform ideas into meaningful impact.
+            </p>
+          </div>
+
+          <div class="about">
+            <div class="about__text">
+              <p>
+                Advanced Systems Global Technology Limited (ASGT) is a
+                technology and innovation company focused on developing
+                intelligent digital products, customised software and
+                technology-driven solutions for individuals, businesses and
+                organisations.
+              </p>
+              <p>
+                We believe technology has the power to transform lives, redefine
+                industries and unlock opportunities. Our work centres on
+                identifying real-world challenges and translating innovative
+                ideas into practical, scalable and impactful digital solutions.
+              </p>
+              <p>
+                Through our commitment to software development, artificial
+                intelligence, engineering innovation and digital transformation,
+                we develop solutions that make complex processes simpler,
+                improve productivity and empower people to achieve more.
+              </p>
+            </div>
+
+            <aside class="portfolio-card">
+              <h3>Our portfolio</h3>
+              <p>
+                Our growing portfolio includes PrepJ, an educational technology
+                platform, and Sphere Design Hub (SDH), an intelligent structural
+                engineering design and collaboration platform.
+              </p>
+              <a href="#work">View our products &rarr;</a>
+            </aside>
+          </div>
+
+          <div class="closing-statement">
+            <p>
+              At ASGT, we are not simply building software. We are building
+              solutions, creating opportunities and shaping the future through
+              technology.
+            </p>
+            <p class="closing-statement__motto">
+              Our Motto: <strong>Innovating Today. Empowering Tomorrow.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         VISION AND MISSION
+         ===================================================================== -->
+      <section id="vision" class="section--alt">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Our Vision and Mission</h2>
+          </div>
+
+          <div class="vision-mission">
+            <article class="vm-card vm-card--vision">
+              <span class="eyebrow">Our Vision</span>
+              <p class="vm-card__statement">
+                To become a globally recognised technology and innovation
+                company, transforming ideas into intelligent digital solutions
+                that empower people, businesses and communities, while shaping a
+                smarter, more connected and sustainable future.
+              </p>
+            </article>
+
+            <article class="vm-card">
+              <span class="eyebrow">Our Mission</span>
+              <p class="vm-card__statement">
+                To design, develop and deliver innovative, accessible and
+                intelligent digital products and technology solutions that solve
+                real-world problems, improve productivity, create opportunities
+                and empower individuals and organisations to achieve more.
+              </p>
+              <p class="vm-card__note">
+                We are committed to combining creativity, engineering,
+                technology and human-centred innovation to make a meaningful
+                difference in the world.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         PHILOSOPHY AND PURPOSE
+         ===================================================================== -->
+      <section id="philosophy">
+        <div class="container">
+          <div class="philosophy">
+            <div>
+              <span class="eyebrow">Our Philosophy</span>
+              <h2>
+                Technology should not merely exist; it should make a difference.
+              </h2>
+              <p>
+                At ASGT, we believe that every great innovation begins with a
+                problem worth solving. We see technology as a tool for unlocking
+                human potential, simplifying complex processes and creating
+                opportunities that were previously out of reach.
+              </p>
+              <p class="philosophy__approach">
+                Our approach is built around transforming ideas into practical
+                solutions that deliver measurable value.
+              </p>
+            </div>
+
+            <div class="purpose-card">
+              <span class="eyebrow">Our Purpose</span>
+              <p>
+                To bridge the gap between human needs and technological
+                possibilities by developing solutions that improve how people
+                learn, work, create, communicate and grow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         CORE VALUES
+         ===================================================================== -->
+      <section id="values" class="section--alt">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Our Core Values</h2>
+            <p>
+              These values guide the way ASGT operates, develops products and
+              serves its customers.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <div class="card__icon">01</div>
+              <h3>Innovation</h3>
+              <p>
+                We challenge conventional thinking and continuously explore
+                better ways to solve problems.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card__icon">02</div>
+              <h3>Excellence</h3>
+              <p>
+                We are committed to quality, reliability and delivering
+                exceptional value through everything we build.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card__icon">03</div>
+              <h3>People First</h3>
+              <p>
+                We put people at the centre of our innovations, creating
+                technology that responds to real human needs.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card__icon">04</div>
+              <h3>Integrity</h3>
+              <p>
+                We build trust through transparency, accountability and
+                responsible technology development.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card__icon">05</div>
+              <h3>Global Thinking</h3>
+              <p>
+                We develop solutions with the ambition to serve people and
+                organisations across borders.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card__icon">06</div>
+              <h3>Continuous Growth</h3>
+              <p>
+                We embrace learning, adaptability and continuous improvement in
+                an ever-changing technological world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         APPROACH
+         ===================================================================== -->
+      <section id="approach">
+        <div class="container">
+          <div class="section-heading">
+            <h2>
+              A technology company that engineers dependable systems and stands
+              behind them.
+            </h2>
+            <p>
+              Whether a problem originates in our own products or with a client,
+              our method is the same.
+            </p>
+          </div>
+
+          <div class="principles">
+            <div class="principle">
+              <h3>Domain expertise first</h3>
+              <p>
+                We begin with the people who rely on the software: engineers who
+                need calculations they can inspect and verify, and students who
+                need dependable, modern study material.
+              </p>
+            </div>
+            <div class="principle">
+              <h3>We build the core ourselves</h3>
+              <p>
+                The engine, the model, the security review. We develop the
+                difficult components in-house and deliver software that
+                professionals can rely on.
+              </p>
+            </div>
+            <div class="principle">
+              <h3>We operate what we build</h3>
+              <p>
+                Our products are live in production. Because we design, build
+                and operate them ourselves, they are our most direct evidence of
+                capability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         SERVICES
+         ===================================================================== -->
+      <section id="services" class="section--alt">
+        <div class="container">
+          <div class="section-heading">
+            <h2>
+              The same engineering we apply to our own products, delivered to
+              clients.
+            </h2>
+          </div>
+
+          <div class="card-grid">
+            <div class="card">
+              <div class="card__icon">&lt;/&gt;</div>
+              <h3>Product engineering</h3>
+              <p>
+                Web and mobile applications, from concept to production: clear
+                interfaces, typed APIs, sound data models and maintainable code
+                that another team can take over.
+              </p>
+              <span class="card__tags"
+                >Web and mobile apps, internal tools, client portals</span
+              >
+            </div>
+            <div class="card">
+              <div class="card__icon">AI</div>
+              <h3>AI and data systems</h3>
+              <p>
+                Language-model features with measurable value, built with
+                evaluation and cost controls from the outset.
+              </p>
+              <span class="card__tags"
+                >Assistants, retrieval, analytics, model evaluation</span
+              >
+            </div>
+            <div class="card">
+              <div class="card__icon">&Sigma;</div>
+              <h3>Engineering software</h3>
+              <p>
+                Numerical software for consequential decisions: solvers,
+                code-compliance checks and verifiable calculation reports.
+              </p>
+              <span class="card__tags"
+                >Analysis engines, design automation, reporting</span
+              >
+            </div>
+            <div class="card">
+              <div class="card__icon">&#9729;</div>
+              <h3>Cloud and platform</h3>
+              <p>
+                Deployment, monitoring and operational infrastructure that keep
+                systems available, sized to the workload and fully documented.
+              </p>
+              <span class="card__tags"
+                >Architecture, CI/CD, monitoring, cost review</span
+              >
+            </div>
+            <div class="card">
+              <div class="card__icon">&#9960;</div>
+              <h3>Cybersecurity</h3>
+              <p>
+                Assessment, hardening and secure design for applications,
+                networks and cloud environments, supported by documented
+                evidence.
+              </p>
+              <span class="card__tags"
+                ><a href="#security">See the security practice</a></span
+              >
+            </div>
+            <div class="card">
+              <div class="card__icon">&#8644;</div>
+              <h3>Integration and modernisation</h3>
+              <p>
+                Connecting disparate systems and modernising ageing software
+                without disrupting day-to-day operations.
+              </p>
+              <span class="card__tags"
+                >APIs, data migration, legacy rescue, automation</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         OUR WORK (product tabs, behaviour in js/main.js: initProductTabs)
+         ===================================================================== -->
+      <section id="work">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Two products we conceived, engineered and operate.</h2>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Our products">
+            <button
+              class="tab"
+              role="tab"
+              id="tab-sphere"
+              aria-controls="panel-sphere"
+              aria-selected="true"
+            >
+              Sphere Design Hub
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-prepj"
+              aria-controls="panel-prepj"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              PrepJ
+            </button>
+          </div>
+
+          <!-- Product 1: Sphere Design Hub -->
+          <article
+            class="product is-active"
+            id="panel-sphere"
+            role="tabpanel"
+            aria-labelledby="tab-sphere"
+          >
+            <div>
+              <img
+                class="product__screenshot"
+                src="assets/images/sphere-continuous-beam.webp"
+                width="1600"
+                height="1000"
+                loading="lazy"
+                alt="Sphere Design Hub continuous beam screen."
+              />
+              <div class="product__thumbs">
+                <img
+                  class="product__screenshot"
+                  src="assets/images/sphere-two-way-slab.webp"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                  alt="Two-way slab input."
+                />
+                <img
+                  class="product__screenshot"
+                  src="assets/images/sphere-pad-footing.webp"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                  alt="Pad footing input."
+                />
+              </div>
+            </div>
+
+            <div>
+              <span class="pill">Civil and structural engineering</span>
+              <h3>Sphere Design Hub</h3>
+              <p class="product__summary">
+                A browser-based design platform for reinforced concrete, in
+                which every calculation step is transparent and traceable to the
+                governing clause.
+              </p>
+
+              <ul class="facts">
+                <li>
+                  <strong>Design basis</strong>Eurocode 2 with the UK National
+                  Annex
+                </li>
+                <li>
+                  <strong>Engine</strong>Proprietary solver and code-checking
+                  logic, 8,000+ lines
+                </li>
+                <li>
+                  <strong>Output</strong>Calculation reports referencing the
+                  governing clause, exported as PDF and CSV
+                </li>
+                <li>
+                  <strong>Technology</strong>React, Python, FastAPI, NumPy,
+                  Plotly
+                </li>
+              </ul>
+
+              <ul class="modules">
+                <li>Slabs</li>
+                <li>Beams</li>
+                <li>Columns</li>
+                <li>Pad footings</li>
+                <li>Combined footings</li>
+                <li>Staircases</li>
+              </ul>
+
+              <a
+                class="btn btn--primary"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                >Visit spheredesignhub.com</a
+              >
+            </div>
+          </article>
+
+          <!-- Product 2: PrepJ -->
+          <article
+            class="product"
+            id="panel-prepj"
+            role="tabpanel"
+            aria-labelledby="tab-prepj"
+          >
+            <div>
+              <img
+                class="product__screenshot"
+                src="assets/images/prepj-home.webp"
+                width="1600"
+                height="1000"
+                loading="lazy"
+                alt="PrepJ home page."
+              />
+              <div class="product__thumbs product__thumbs--centered">
+                <img
+                  class="product__screenshot"
+                  src="assets/images/prepj-features.webp"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                  alt="PrepJ features."
+                />
+                <img
+                  class="product__phone"
+                  src="assets/images/prepj-mobile.webp"
+                  width="390"
+                  height="664"
+                  loading="lazy"
+                  alt="PrepJ on a phone."
+                />
+              </div>
+            </div>
+
+            <div>
+              <span class="pill">Education technology</span>
+              <h3>PrepJ</h3>
+              <p class="product__summary">
+                A JAMB UTME preparation platform offering past questions, timed
+                mock examinations and an AI tutor. Free to start and available
+                on any device.
+              </p>
+
+              <ul class="facts">
+                <li>
+                  <strong>Practice</strong>Past questions organised by subject,
+                  topic and year, with an explanation for every answer
+                </li>
+                <li>
+                  <strong>Mock exams</strong>Timed computer-based tests that
+                  identify the topics where the most marks are lost
+                </li>
+                <li>
+                  <strong>AI tutor</strong>Provides simpler explanations of
+                  difficult concepts after each attempt
+                </li>
+                <li>
+                  <strong>Availability</strong>Available on the web. iOS and
+                  Android apps are in development.
+                </li>
+              </ul>
+
+              <a
+                class="btn btn--primary"
+                href="https://prepjasgt.com"
+                target="_blank"
+                rel="noopener"
+                >Visit prepjasgt.com</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         SECURITY
+         ===================================================================== -->
+      <section id="security" class="section--alt">
+        <div class="container">
+          <div class="section-heading">
+            <h2>
+              Identify vulnerabilities before attackers do, and remediate them
+              thoroughly.
+            </h2>
+            <p>
+              As software engineers ourselves, we know where weaknesses commonly
+              arise under delivery pressure. Every engagement is authorised and
+              scoped in writing before work begins.
+            </p>
+          </div>
+
+          <ol class="steps steps--four">
+            <li>
+              <strong>Scope</strong
+              ><span
+                >Targets, boundaries and authorisation agreed in writing.</span
+              >
+            </li>
+            <li>
+              <strong>Assess</strong
+              ><span
+                >Manual and tool-assisted testing that replicates real attacker
+                techniques.</span
+              >
+            </li>
+            <li>
+              <strong>Report</strong
+              ><span
+                >Evidence, impact and a prioritised remediation for each
+                finding.</span
+              >
+            </li>
+            <li>
+              <strong>Retest</strong
+              ><span
+                >Verification of fixes, with closed findings documented.</span
+              >
+            </li>
+          </ol>
+
+          <div class="security-grid">
+            <div class="security-item">
+              <h3>Penetration testing</h3>
+              <p>
+                Web, mobile, API and network testing that mirrors real-world
+                attack methods.
+              </p>
+            </div>
+            <div class="security-item">
+              <h3>Vulnerability assessment</h3>
+              <p>
+                A structured review of your environment, with findings ranked by
+                risk.
+              </p>
+            </div>
+            <div class="security-item">
+              <h3>Code and architecture review</h3>
+              <p>
+                Secure code review and threat modelling, before launch or
+                following an incident.
+              </p>
+            </div>
+            <div class="security-item">
+              <h3>Cloud hardening</h3>
+              <p>
+                Identity, network segmentation, encryption, backup and logging
+                aligned to a documented baseline.
+              </p>
+            </div>
+            <div class="security-item">
+              <h3>Incident readiness</h3>
+              <p>
+                Meaningful alerting and a response plan that is tested in
+                advance.
+              </p>
+            </div>
+            <div class="security-item">
+              <h3>Data protection and awareness</h3>
+              <p>
+                Preparation for Nigeria Data Protection Act (NDPA) compliance
+                and phishing-awareness training.
+              </p>
+            </div>
+          </div>
+
+          <p class="section-note">
+            This website loads no tracking scripts and sets no tracking cookies.
+          </p>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         PROCESS
+         ===================================================================== -->
+      <section id="how">
+        <div class="container">
+          <div class="section-heading">
+            <h2>From initial briefing to handover.</h2>
+            <p>
+              Engagements typically take one of four forms: fixed-scope
+              delivery, a dedicated team, a systems audit and recovery, or a
+              security assessment.
+            </p>
+          </div>
+
+          <ol class="steps">
+            <li>
+              <strong>Brief</strong
+              ><span
+                >Problem definition, constraints and success criteria.</span
+              >
+            </li>
+            <li>
+              <strong>Scoping note</strong
+              ><span
+                >Approach, timeline, cost and assumptions documented in
+                writing.</span
+              >
+            </li>
+            <li>
+              <strong>Build</strong
+              ><span>Working software delivered in testable increments.</span>
+            </li>
+            <li>
+              <strong>Verify</strong
+              ><span>Testing, security review and acceptance.</span>
+            </li>
+            <li>
+              <strong>Handover</strong
+              ><span
+                >Source code, documentation and support. You retain full
+                ownership.</span
+              >
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         FAQ
+         ===================================================================== -->
+      <section id="faq" class="section--alt">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Frequently asked questions</h2>
+          </div>
+
+          <div class="faq">
+            <details>
+              <summary>What kind of projects do you take on?</summary>
+              <p>
+                We undertake selected client engagements: new products and
+                applications, work on existing systems, AI and data projects,
+                and security assessments.
+              </p>
+            </details>
+            <details>
+              <summary>Who owns the code?</summary>
+              <p>
+                You do. Handover includes source code, documentation and
+                support, and everything we build for you is yours.
+              </p>
+            </details>
+            <details>
+              <summary>How do you agree scope and price?</summary>
+              <p>
+                Following an initial discussion of the problem, we issue a
+                written scoping note covering approach, timeline, cost and
+                assumptions before any build begins.
+              </p>
+            </details>
+            <details>
+              <summary>Do you work with clients outside Lagos?</summary>
+              <p>
+                Yes. We are based in Delta, Lagos, Nigeria and London, UK and work with
+                clients internationally.
+              </p>
+            </details>
+            <details>
+              <summary>How does a security engagement work?</summary>
+              <p>
+                We agree targets, boundaries and authorisation in writing, then
+                test and report each finding with its impact and recommended
+                fix. We retest afterwards to confirm that remediation is
+                effective.
+              </p>
+            </details>
+            <details>
+              <summary>How quickly will you reply?</summary>
+              <p>
+                We respond to every enquiry, typically within two working days.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         BRAND PROMISE AND MOTTO
+         ===================================================================== -->
+      <section id="promise">
+        <div class="container promise">
+          <span class="pill">Our Brand Promise</span>
+          <h2>
+            We turn ideas into technology and technology into possibilities.
+          </h2>
+          <p class="promise__text">
+            Every product, service and solution developed by ASGT reflects our
+            commitment to usefulness, innovation, accessibility and quality.
+          </p>
+
+          <div class="motto-card">
+            <small>ASGT Corporate Motto</small>
+            <strong>Innovating Today.<br />Empowering Tomorrow.</strong>
+            <span
+              >Building technology that transforms ideas into meaningful
+              impact.</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         CONTACT
+         The form is handled by js/main.js (initContactForm).
+         Delivery settings live in js/config.js.
+         ===================================================================== -->
+      <section id="contact" class="section--alt">
+        <div class="container">
+          <div class="contact-band">
+            <div class="contact-band__info">
+              <h2>Discuss your project with us.</h2>
+              <p>
+                A brief outline of your requirements is sufficient. We respond
+                to every enquiry, typically within two working days.
+              </p>
+
+              <dl class="contact-details">
+                <div>
+                  <dt>Email</dt>
+                  <dd>
+                    <a href="mailto:info@advancedsystemsglobaltechnology.co.uk"
+                      >info@advancedsystemsglobaltechnology.co.uk</a
+                    >
+                  </dd>
+                </div>
+                <div>
+                  <dt>Address</dt>
+                  <dd>
+                    <address>
+                      Advanced Systems Global Technology Ltd<br />
+                      122 Wooldridge Close<br />
+                      Feltham<br />
+                      London<br />
+                      TW14 8BH<br />
+                      United Kingdom
+                    </address>
+                  </dd>
+                </div>
+              </dl>
+
+              <p class="contact-band__location">
+                Delta, Lagos, Nigeria and London, UK. Serving clients internationally.
+              </p>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+              <label
+                >Your name
+                <input type="text" name="name" required autocomplete="name" />
+              </label>
+
+              <label
+                >Email address
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                />
+              </label>
+
+              <label
+                >Organisation (optional)
+                <input
+                  type="text"
+                  name="organisation"
+                  autocomplete="organization"
+                />
+              </label>
+
+              <label
+                >Type of enquiry
+                <select name="enquiry_type">
+                  <option value="A new product or application">
+                    A new product or application
+                  </option>
+                  <option value="Work on an existing system">
+                    Work on an existing system
+                  </option>
+                  <option value="AI or data project">AI or data project</option>
+                  <option value="Security assessment">
+                    Security assessment
+                  </option>
+                  <option value="Other enquiry">Other enquiry</option>
+                </select>
+              </label>
+
+              <label
+                >Project details
+                <textarea
+                  name="message"
+                  rows="4"
+                  required
+                  minlength="10"
+                ></textarea>
+              </label>
+
+              <!-- Honeypot: real visitors never see or fill this; bots often do. -->
+              <div class="form-trap" aria-hidden="true">
+                <label
+                  >Leave this box empty
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+                </label>
+              </div>
+
+              <button class="btn btn--primary" type="submit">
+                Send enquiry
+              </button>
+
+              <p
+                class="form-status"
+                id="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+
+              <small class="form-note"
+                >Your enquiry is delivered to our team by email and used only to
+                respond to you. No data is stored on this website.</small
+              >
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <span>
+          &copy; 2026 Advanced Systems Global Technology Ltd. All rights
+          reserved.
+          <span class="site-footer__address"
+            >122 Wooldridge Close, Feltham, London TW14 8BH, United
+            Kingdom</span
+          >
+          <span class="site-footer__motto"
+            >Innovating Today. Empowering Tomorrow.</span
+          >
+        </span>
+        <span>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Our work</a>
+          <a href="#security">Security</a>
+          <a href="#contact">Contact</a>
+        </span>
+      </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
